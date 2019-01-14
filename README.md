@@ -213,6 +213,7 @@ Error while Launching activity
 7、后面新的版本的Activity-alias必须包含上一个版本的所有Activity-alias，主要是防止覆盖安装后应用图标消失的情况；
 
 update:2019年1月14日下午5:09 新发现需要注意的问题
+
 8、设置enabled为false的Activity无法在代码中通过显式intent打开，会报错。例如：我在应用里面推送服务推送了一条指定打开页面SplashActivity的通知消息，而这个SplashActivity刚好设置了enabled为false的话，是打不开的，会有错误日志如下，其它同理（所以在项目里我将启动入口的Activity单独写出来了，除了作为启动入口用，就没有别的地方再用到这个Activity了。）：
 
 ![](https://user-gold-cdn.xitu.io/2019/1/14/1684ba4c10c1eae1?w=2826&h=506&f=jpeg&s=268865)
