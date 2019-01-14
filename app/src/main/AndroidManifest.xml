@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wepon.switchicondemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--原Activity enabled固定为false，且不通过代码进行设置 这个MainActivity设置enabled为false后就不能再通过显式intent调用了，会有报错信息。-->
+        <activity
+            android:enabled="false"
+            android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 固定设置一个默认的别名，用来替代原Activity-->
+        <activity-alias
+            android:name="DefaultAlias"
+            android:enabled="true"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher_round"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名1，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity1"
+            android:enabled="false"
+            android:label="Alias1"
+            android:icon="@mipmap/ic_launcher"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!--别名2，后面要加的话按这种样式加就行了，没有什么影响，只是注意要在代码中进行切换，不要直接在清单文件中切换。-->
+        <activity-alias
+            android:name="NewActivity2"
+            android:enabled="false"
+            android:label="Alias2"
+            android:icon="@mipmap/ic_launcher_round"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+    </application>
+
+</manifest>
